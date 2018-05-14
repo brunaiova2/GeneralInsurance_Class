@@ -114,7 +114,7 @@ ata(Incur_HH_sml)
 
 ##  get the weights of incremental paid triangle => this is what we are intrested in because individual payments matter
 
-Paid_HH_sml_Incremental<-cum2incr(Paid_HH_sml)
+Paid_HH_sml_Incremental<-cum2incr(Paid_HH_sml)#
 weights<-attr(ata(Paid_HH_sml_Incremental),"vwtd")
 weights
 
