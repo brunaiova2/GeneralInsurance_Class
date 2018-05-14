@@ -114,12 +114,20 @@ ata(Incur_HH_sml)
 
 ##  get the weights of incremental paid triangle => this is what we are intrested in because individual payments matter
 
+Paid_HH_sml_Incremental<-cum2incr(Paid_HH_sml)
+weights<-attr(ata(Paid_HH_sml_Incremental),"vwtd")
+weights
+
+
 ## SOLUTION:
 ## ------------------------------------
 Incr_Paid_HH_sml <- Paid_HH_sml %>% cum2incr() %>% ata() %>% attr("vwtd")
 ## ------------------------------------
 
 ## average duration (calculate a weighted sum, where the weight is the number of year/total cummulative paid sum)
+
+average_duration<-sum(weights*c(1:9)/sum(weights))
+average_duration
 
 ## SOLUTION:
 ## ------------------------------------
